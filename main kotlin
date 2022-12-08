@@ -1,0 +1,65 @@
+fun main() {
+   var list = LinkedList()
+   list.addLast(5)
+   list.addLast(6)
+   list.addLast(7)
+   println(list.indexOf(9))
+  
+   
+}
+
+
+class LinkedList() {
+    
+   class Node(value: Int) {
+       var value: Int = value
+       var next: Node? = null
+    
+}
+    
+    
+    var first: Node? = null
+    var last: Node? = null
+    
+    fun addLast(item: Int) {
+        var node = Node(item)
+        if (isEmpty()){
+            first = node
+            last = node
+        }
+        else {
+            last?.next = node
+        	last = node 
+        }
+        
+        
+    }
+    fun addFirst(item: Int){
+        var node = Node(item)
+        if(isEmpty()){
+            first = node 
+            last = node
+        }
+        else{
+            node.next = first
+            first = node
+        }
+        
+    }
+    fun isEmpty(): Boolean {
+        return first == null
+    }
+    fun indexOf(item: Int): Int {
+        var index = 0
+        var current = first
+        while(current != null) {
+            if(current.value == item)
+            	return index
+            current = current?.next
+            index++
+        }
+        return -1
+        
+    }
+    
+}
