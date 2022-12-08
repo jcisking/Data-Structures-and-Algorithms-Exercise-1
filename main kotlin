@@ -3,7 +3,7 @@ fun main() {
    list.addLast(5)
    list.addLast(6)
    list.addLast(7)
-   println(list.indexOf(9))
+   println(list.contains(7))
   
    
 }
@@ -60,6 +60,9 @@ class LinkedList() {
         }
         return -1
         
+    }
+    fun contains(item: Int): Boolean {
+        return indexOf(item) != -1
     }
     
 }
